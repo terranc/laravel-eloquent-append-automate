@@ -25,9 +25,17 @@ use Lookfeel\AppendAutomate\Database\Eloquent\Model;
 class User extend Modal {
     protected $appends = [
         'fullname',
-        'gender' => 'gender_text',
-        'status' => 'status_text',
+        'gender' => 'gender_text',  // gender 是一个 int 字段，0:女，1:男
+        'status' => 'status_text', // status 是一个 int 字段，0:禁用，1:启用
     ];
+    public function getGenderTextAttribute()
+    {
+        return ['女', '男'][$this->gender];
+    }
+    public function getStatusTextAttribute()
+    {
+        return ['启用', '禁用'][$this->status];
+    }
 }
 ```
 
