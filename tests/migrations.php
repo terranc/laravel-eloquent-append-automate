@@ -15,10 +15,10 @@ class Migration extends BaseMigration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('username');
             $table->string('firstname');
             $table->string('lastname');
             $table->integer('status')->default(0);
+            $table->integer('gender')->default(0);
             $table->timestamps();
         });
     }

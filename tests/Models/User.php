@@ -16,6 +16,11 @@ class User extends Model
         return ['Enabled', 'Disabled'][$this->status];
     }
 
+    public function getGenderTextAttribute()
+    {
+        return ['Female', 'Male'][$this->gender];
+    }
+
     public function getFullnameAttribute()
     {
         return $this->firstname . " " . $this->lastname;
