@@ -1,6 +1,6 @@
 {
   "name": "lookfeel/laravel-eloquent-append-automate",
-  "description": "根据 appends 配置的关联字段映射关系，自动将不需要的属性剔除",
+  "description": "根据 appends 配置的关联字段映射关系，自动维护需要的 appends。,
   "license": "MIT",
   "keywords": [
     "laravel",
