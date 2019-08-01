@@ -5,10 +5,6 @@ Laravel Eloquent Append Automation
 
 根据 appends 配置的关联字段映射关系，自动将不需要的属性剔除
 
-#### 相关文章:
-
-https://learnku.com/articles/31931
-
 ## 安装
 ```bash
 $ composer require lookfeel/laravel-eloquent-append-automate
@@ -58,6 +54,10 @@ User::select(['id', 'firstname', 'lastname', 'gender'])->firstOrFail();
 ### 使用 `Lookfeel\AppendAutomate\AppendAutomateTrait`
 
 如果由于某些原因不能继承 `Lookfeel\AppendAutomation\Database\Model`，那么您可以在已有 Model 中 `use Lookfeel\AppendAutomation\AppendAutomateTrait`。
+
+#### 相关文章:
+
+https://learnku.com/articles/31931
 
 ## 单元测试
 
