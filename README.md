@@ -56,8 +56,7 @@ User::select(['id', 'firstname', 'gender'])->firstOrFail();
 {
     "id": 1,
     "first_letter": "T",
-    "lastname": "Chao",
-    "fullname": "Terran Chao",
+    "firstname": "Terran",
     "gender": 1,
     "gender_text": "男"
 }
