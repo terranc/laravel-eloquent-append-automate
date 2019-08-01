@@ -28,6 +28,8 @@ class User extend Modal {
         'firstname|lastname' => 'fullname',     // firstname 和 lastname 字段缺一不可，否则不返回 fullname
         'gender' => 'gender_text',  // gender 是一个 int 字段，0:女，1:男
         'status' => 'status_text', // status 是一个 int 字段，0:禁用，1:启用
+        'gender_text' => 'access',
+        'access' => 'access_text',
     ];
     public function getFirstLetterAttribute()
     {
@@ -45,6 +47,14 @@ class User extend Modal {
     {
         return ['启用', '禁用'][$this->status];
     }
+    public function getAccessAttribute()
+    {
+        return $this->gender_text === 'Female';
+    }
+    public function getAccessTextAttribute()
+    {
+        return $this->access ? 'can' : 'Can not';
+    }
 }
 ```
 
@@ -58,7 +68,9 @@ User::select(['id', 'firstname', 'gender'])->firstOrFail();
     "first_letter": "T",
     "firstname": "Terran",
     "gender": 1,
-    "gender_text": "男"
+    "gender_text": "男",
+    "access": 1,
+    "access_text": "can"
 }
 */
 ```

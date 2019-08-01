@@ -11,8 +11,8 @@ class User extends Model
         'firstname|lastname' => 'fullname',     // firstname 和 lastname 字段缺一不可，否则不返回 fullname
         'gender' => 'gender_text',  // gender 是一个 int 字段，0:女，1:男
         'status' => 'status_text', // status 是一个 int 字段，0:禁用，1:启用
-        'gender_text' => 'access', // status 是一个 int 字段，0:禁用，1:启用
-        'access' => 'access_text', // status 是一个 int 字段，0:禁用，1:启用
+        'gender_text' => 'access',
+        'access' => 'access_text',
     ];
 
     public function getStatusTextAttribute()
