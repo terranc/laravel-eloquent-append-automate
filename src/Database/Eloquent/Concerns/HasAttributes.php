@@ -12,7 +12,7 @@ trait HasAttributes
             if (is_string($k)) {
                 $columns = explode('|', $k);
                 foreach ($columns as $column) {
-                    if (!isset($this->attributes[$column])) {
+                    if (!isset($this->$column)) {
                         unset($this->appends[$k]);
                     }
                 }
