@@ -11,6 +11,8 @@ class User extends Model
         'firstname|lastname' => 'fullname',     // firstname 和 lastname 字段缺一不可，否则不返回 fullname
         'gender' => 'gender_text',  // gender 是一个 int 字段，0:女，1:男
         'status' => 'status_text', // status 是一个 int 字段，0:禁用，1:启用
+        'gender_text' => 'access', // status 是一个 int 字段，0:禁用，1:启用
+        'access' => 'access_text', // status 是一个 int 字段，0:禁用，1:启用
     ];
 
     public function getStatusTextAttribute()
@@ -27,9 +29,20 @@ class User extends Model
     {
         return substr($this->firstname, 0, 1);
     }
+
     public function getFullnameAttribute()
     {
         return $this->firstname . ' ' . $this->lastname;
+    }
+
+    public function getAccessAttribute()
+    {
+        return $this->gender_text === 'Female';
+    }
+
+    public function getAccessTextAttribute()
+    {
+        return $this->access ? 'can' : 'Can not';
     }
 
 }

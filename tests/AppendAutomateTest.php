@@ -25,12 +25,14 @@ class AppendAutomateTest extends TestCase
 
         $user->save();
 
-        $user = User::select(['id', 'firstname', 'status'])->first();
+        $user = User::select(['id', 'firstname', 'gender'])->first();
 
         $this->assertArrayNotHasKey('fullname', $user->toArray());
         $this->assertArrayHasKey('first_letter', $user->toArray());
-        $this->assertArrayHasKey('status_text', $user->toArray());
-        $this->assertArrayNotHasKey('gender_text', $user->toArray());
+        $this->assertArrayNotHasKey('status_text', $user->toArray());
+        $this->assertArrayHasKey('gender_text', $user->toArray());
+        $this->assertArrayHasKey('access', $user->toArray());
+        $this->assertArrayHasKey('access_text', $user->toArray());
 
         Model::unguard();
     }
