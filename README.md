@@ -1,10 +1,13 @@
 Laravel Eloquent Append Automation
 ====================
 
+> 撸了个包，解决困扰我很久的一个问题，当给定了 $appends 之后，在某些限定了查询字段的查询时，会因没查询 accessor 中涉及的字段而导致错误，而每次在使用的时候再去动态 append 又很烦，变化时维护起来很心累。
+
 根据 appends 配置的关联字段映射关系，自动将不需要的属性剔除
 
 #### 相关文章:
 
+https://learnku.com/articles/31931
 
 ## 安装
 ```bash
