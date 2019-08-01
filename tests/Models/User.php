@@ -7,8 +7,10 @@ use Lookfeel\AppendAutomate\Database\Eloquent\Model;
 class User extends Model
 {
     protected $appends = [
-        'status' => 'status_text',
-        'fullname',
+        'first_letter',
+        'firstname|lastname' => 'fullname',     // firstname 和 lastname 字段缺一不可，否则不返回 fullname
+        'gender' => 'gender_text',  // gender 是一个 int 字段，0:女，1:男
+        'status' => 'status_text', // status 是一个 int 字段，0:禁用，1:启用
     ];
 
     public function getStatusTextAttribute()
@@ -21,9 +23,13 @@ class User extends Model
         return ['Female', 'Male'][$this->gender];
     }
 
+    public function getFirstLetterAttribute()
+    {
+        return substr($this->firstname, 0, 1);
+    }
     public function getFullnameAttribute()
     {
-        return $this->firstname . " " . $this->lastname;
+        return $this->firstname . ' ' . $this->lastname;
     }
 
 }

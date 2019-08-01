@@ -9,8 +9,13 @@ trait HasAttributes
     protected function getArrayableAppends()
     {
         foreach ($this->appends as $k => $v) {
-            if (is_string($k) && !isset($this->attributes[$k])) {
-                unset($this->appends[$k]);
+            if (is_string($k)) {
+                $columns = explode('|', $k);
+                foreach ($columns as $column) {
+                    if (!isset($this->attributes[$column])) {
+                        unset($this->appends[$k]);
+                    }
+                }
             }
         }
 
