@@ -1,4 +1,5 @@
-<?php namespace Lookfeel\AppendAutomate;
+<?php 
+namespace Lookfeel\AppendAutomate;
 
 use Illuminate\Support\ServiceProvider;
 

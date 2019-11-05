@@ -27,10 +27,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Lookfeel\\AppendAutomate\\": "src"
-    },
-    "files": [
-    ]
+      "Lookfeel\\AppendAutomate\\": "src/"
+    }
   },
   "extra": {
     "laravel": {
