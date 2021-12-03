@@ -10,7 +10,7 @@ trait AppendAutomateTrait
             if (is_string($k)) {
                 $columns = explode('|', $k);
                 foreach ($columns as $column) {
-                    if (!isset($this->$column)) {
+                    if (!isset($this->attributes[$column]) && !isset($this->relations[$column])) {
                         unset($this->appends[$k]);
                     }
                 }
